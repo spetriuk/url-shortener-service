@@ -1,5 +1,8 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://user:knfd9uhdf64lk@localhost:27017/shortener?authSource=admin
-
+      uri: mongodb://${MONGODB_USER}:${MONGODB_PWD}@${MONGODB_HOST:localhost:27017}/${MONGODB_NAME:shortener}?${MONGODB_PARAMETERS:authSource=admin}
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=5000, expireAfterWrite=24h
