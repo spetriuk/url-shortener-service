@@ -15,6 +15,6 @@ class GetUrlSimulation extends Simulation {
         .check(status.is(200))
       )
 
-  setUp(getDataScenario.inject(rampUsersPerSec(startUsers) to endUsers during time)).protocols(httpConf)
+  setUp(getDataScenario.inject(constantUsersPerSec(endUsers) during time)).protocols(httpConf)
 
 }
